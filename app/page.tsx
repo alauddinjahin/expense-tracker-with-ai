@@ -17,7 +17,7 @@ export default async function HomePage() {
       {/* Mobile-optimized container with responsive padding */}
       <div className='max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8'>
         {/* Mobile-first responsive grid */}
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6'>
+        <div className='grid grid-cols-1 gap-4 sm:gap-6'>
           {/* Left Column - Stacked on mobile */}
           <div className='space-y-4 sm:space-y-6'>
             {/* Welcome section with improved mobile layout */}
@@ -27,9 +27,9 @@ export default async function HomePage() {
                 <img
                   src={user.imageUrl}
                   alt={`${user.firstName}&#39;s profile`}
-                  className='w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-2 border-white dark:border-gray-600 shadow-lg'
+                  className='sm:w-20 sm:h-20 md:w-96 md:h-auto rounded-2xl border-2 border-white dark:border-gray-600 shadow-lg'
                 />
-                <div className='absolute -bottom-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full border-2 border-white dark:border-gray-800 flex items-center justify-center'>
+                <div className='absolute -bottom-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-green-400 to-green-500 rounded-full border-2 border-white dark:border-gray-800 flex items-center justify-center'>
                   <span className='text-white text-xs'>✓</span>
                 </div>
               </div>
@@ -50,9 +50,9 @@ export default async function HomePage() {
                   efficiently!
                 </p>
                 {/* Mobile-optimized badge grid */}
-                <div className='flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center sm:justify-start'>
+                <div className='flex flex-col gap-2 sm:gap-3 justify-center sm:justify-start'>
                   
-                  <div className='bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/30 dark:to-orange-900/30 border border-amber-100 dark:border-amber-800 px-3 py-2 rounded-xl flex items-center gap-2 justify-center sm:justify-start'>
+                  <div className='flex-1 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/30 dark:to-orange-900/30 border border-amber-100 dark:border-amber-800 px-3 py-2 rounded-xl flex items-center gap-2 justify-center sm:justify-start'>
                     <div className='w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-amber-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0'>
                       <span className='text-white text-xs'>
                         <CalendarClock size={18} />
@@ -68,7 +68,7 @@ export default async function HomePage() {
                     </div>
                   </div>
 
-                  <div className='bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 border border-orange-100 dark:border-orange-800 px-3 py-2 rounded-xl flex items-center gap-2 justify-center sm:justify-start'>
+                  <div className='flex-1 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 border border-orange-100 dark:border-orange-800 px-3 py-2 rounded-xl flex items-center gap-2 justify-center sm:justify-start'>
                     <div className='w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg flex items-center justify-center flex-shrink-0'>
                       <span className='text-white text-xs'>
                         <LightbulbIcon size={18} />
@@ -89,16 +89,21 @@ export default async function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className='grid md:grid-cols-2 grid-cols-1 gap-4 sm:gap-6'>
             {/* Add New Expense */}
             <AddNewRecord />
+
+            {/* Expense Analytics */}
+            <ExpenseStats />
           </div>
 
           {/* Right Column - Stacked below on mobile */}
           <div className='space-y-4 sm:space-y-6'>
-            {/* Expense Analytics */}
-            <RecordChart />
-            <ExpenseStats />
+             <RecordChart />
           </div>
+
         </div>
 
         {/* Full-width sections below - mobile-friendly spacing */}
